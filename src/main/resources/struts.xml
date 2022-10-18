@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">  
+
+<struts>
+    <!-- <constant name="struts.mapper.action.prefix.enabled" value="true"/> -->
+    <constant name="struts.devMode" value="true" />
+
+    <package name="default" namespace="/" extends="struts-default, json-default" >
+    <default-action-ref name="index"/>
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+
+        <action name="US_Stocks" class="com.rakuten.action.US_Stocks" method="execute"> 
+            <result name="success">/MadzUS_Stocks.jsp</result>
+            <result name="error">/MadzUS_Stocks.jsp</result>
+        </action>
+    </package>
+
+</struts>
